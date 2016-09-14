@@ -2,12 +2,12 @@
     angular.module("demoApp", []);
 
     angular.module("demoApp")
-        .controller("myCtrl", function ($scope, $http) {
+        .controller("myCtrl", function ($scope) {
             $scope.countries = ["india", "US"];
-            $http.get("api/getDetails")
-                .success(function (response) {
-                    $scope.userInformation = response;
-                });
+           /* $http.get("api/getDetails")
+     .success(function (response) {
+         $scope.userInformation = response;
+     });*/
         });
 
     angular.module("demoApp")
