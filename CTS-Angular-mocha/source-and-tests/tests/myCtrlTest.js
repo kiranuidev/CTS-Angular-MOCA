@@ -1,19 +1,19 @@
 describe("Unit testing demoCtrl", function () {
+    var scope, ctrl;
     beforeEach(module("demoApp"));
 
-    it("test country list", inject(function ($controller, $rootScope) {
-        var scope = $rootScope.$new();
+    beforeEach(inject(function ($controller, $rootScope) {
+        scope = $rootScope.$new();
+        scope.messageFromTest = "Hey  unit test";
         var ctrl = $controller("myCtrl", {
             $scope: scope
         });
-        assert.equal(2, scope.countries.length);
-        /* $httpBackend.when("GET", "api/getDetails")
-             .respond(["kiran", "rupalee", "balaji"]);
-
-         var ctrl = $controller("myCtrl", {
-             $scope: scope
-         });
-         $httpBackend.flush();
-         scope.userInformation.should.contain("kiran");*/
     }));
+    it("test country list", function () {
+        assert.equal(2, scope.countries.length);
+    });
+    it("test addCountry", function () {
+        scope.addCountry("UK");
+        assert.equal(3, scope.countries.length);
+    });
 });

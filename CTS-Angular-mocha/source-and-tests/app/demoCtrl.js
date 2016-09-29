@@ -4,6 +4,10 @@
     angular.module("demoApp")
         .controller("myCtrl", function ($scope) {
             $scope.countries = ["india", "US"];
+        
+        $scope.addCountry = function(country){
+          $scope.countries.push(country);  
+        };
            /* $http.get("api/getDetails")
      .success(function (response) {
          $scope.userInformation = response;
