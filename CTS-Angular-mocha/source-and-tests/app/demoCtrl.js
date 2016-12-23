@@ -8,10 +8,7 @@
         $scope.addCountry = function(country){
           $scope.countries.push(country);  
         };
-           /* $http.get("api/getDetails")
-     .success(function (response) {
-         $scope.userInformation = response;
-     });*/
+          
         });
 
     angular.module("demoApp")
@@ -19,5 +16,5 @@
             this.getDetails = function () {
                 return ["kiran", "Balaji"];
             }
-        })
+        });
 })();
